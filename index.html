@@ -179,7 +179,7 @@ Emmanuel Paalam
 
 </section>
 <section id="why-metasense" class="slide level2">
-<h2>1. Why MetaSense?</h2>
+<h2>Why MetaSense?</h2>
 <p><strong>Health systems often see chronic disease one condition at a time.</strong><br>
 But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer commonly cluster in ways that increase functional decline and care complexity.</p>
 <p><strong>MetaSense goal:</strong> use large-scale clinical data to discover multimorbidity profiles, then use passive wearable activity patterns to stratify high-burden risk.</p>
@@ -197,17 +197,37 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 </div>
 </div>
 </section>
+<section id="mets-and-cancer" class="slide level2">
+<h2>MeTs and Cancer</h2>
+
+<img data-src="cancer1.png" class="r-stretch"></section>
+<section id="mets-and-cancer-1" class="slide level2">
+<h2>MeTs and Cancer</h2>
+
+<img data-src="cancer2.png" class="r-stretch"></section>
+<section id="mets-and-cancer-2" class="slide level2">
+<h2>MeTs and Cancer</h2>
+
+<img data-src="cancer3.png" class="r-stretch"></section>
+<section id="oa-burden" class="slide level2">
+<h2>OA burden</h2>
+
+<img data-src="oa1.png" class="r-stretch"></section>
+<section id="oa-burden-1" class="slide level2">
+<h2>OA Burden</h2>
+
+<img data-src="oa2.png" class="r-stretch"></section>
 <section id="project-architecture" class="slide level2">
-<h2>2. Project Architecture</h2>
+<h2>Project Architecture</h2>
 
 <img data-src="metasense.png" class="quarto-figure quarto-figure-center r-stretch"><p><strong>Key protection:</strong> diagnoses used to define LCA classes were <strong>not</strong> used as ML predictors.</p>
 </section>
 <section id="data-sources-and-cohorts" class="slide level2 smaller">
-<h2>3. Data Sources and Cohorts</h2>
-<table class="caption-top" style="width:100%;">
+<h2>Data Sources and Cohorts</h2>
+<table class="caption-top">
 <colgroup>
 <col style="width: 30%">
-<col style="width: 39%">
+<col style="width: 38%">
 <col style="width: 30%">
 </colgroup>
 <thead>
@@ -243,7 +263,7 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 <p><strong>Fitbit preprocessing:</strong> deduplicated person-day records, retained 100–100,000 daily steps, and required ≥30 valid activity days.</p>
 </section>
 <section id="lca-indicator-distribution" class="slide level2 smaller">
-<h2>4. LCA Indicator Distribution</h2>
+<h2>LCA Indicator Distribution</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -285,11 +305,11 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 <p><strong>Interpretation:</strong> this cohort contains substantial metabolic, musculoskeletal, cancer, and mental-health burden — ideal for phenotype discovery.</p>
 </section>
 <section id="five-multimorbidity-phenotypes" class="slide level2 smaller">
-<h2>5. Five Multimorbidity Phenotypes</h2>
-<table class="caption-top" style="width:100%;">
+<h2>Five Multimorbidity Phenotypes</h2>
+<table class="caption-top">
 <colgroup>
 <col style="width: 30%">
-<col style="width: 39%">
+<col style="width: 38%">
 <col style="width: 30%">
 </colgroup>
 <thead>
@@ -330,7 +350,7 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 <p><strong>LCA quality:</strong> entropy = <strong>0.769</strong>; mean max posterior probability = <strong>0.849</strong>.</p>
 </section>
 <section id="why-focus-ml-on-high-multidomain-burden" class="slide level2 smaller">
-<h2>6. Why Focus ML on High Multidomain Burden?</h2>
+<h2>Why Focus ML on High Multidomain Burden?</h2>
 <p>We first tested full five-class prediction from wearables + demographics.</p>
 <p><strong>Result:</strong> modest discrimination<br>
 Accuracy ≈ <strong>0.42</strong>; macro-F1 ≈ <strong>0.34</strong></p>
@@ -350,7 +370,7 @@ Accuracy ≈ <strong>0.42</strong>; macro-F1 ≈ <strong>0.34</strong></p>
 </div>
 </section>
 <section id="wearable-features-used-in-ml" class="slide level2 smaller">
-<h2>7. Wearable Features Used in ML</h2>
+<h2>Wearable Features Used in ML</h2>
 <p>After reducing highly correlated step features, the final model used:</p>
 <ul>
 <li>Mean daily steps</li>
@@ -365,7 +385,7 @@ Accuracy ≈ <strong>0.42</strong>; macro-F1 ≈ <strong>0.34</strong></p>
 <p><strong>ZIP code/ZIP3 were retained for reporting, not entered into the ML model.</strong></p>
 </section>
 <section id="tuned-xgboost-performance" class="slide level2 smaller">
-<h2>8. Tuned XGBoost Performance</h2>
+<h2>Tuned XGBoost Performance</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -408,13 +428,13 @@ Accuracy ≈ <strong>0.42</strong>; macro-F1 ≈ <strong>0.34</strong></p>
 Calibration AUC = <strong>0.687</strong>; test AUC = <strong>0.691</strong>.</p>
 </section>
 <section id="trust-layer-calibration-conformal-prediction" class="slide level2 smaller">
-<h2>9. Trust Layer: Calibration + Conformal Prediction</h2>
+<h2>Trust Layer: Calibration + Conformal Prediction</h2>
 <p><strong>Risk gradient:</strong> observed High Multidomain Burden increased from <strong>5.4%</strong> in the lowest predicted-risk decile to <strong>54.8%</strong> in the highest.</p>
 <p><strong>Class-conditional conformal prediction at 90% nominal coverage:</strong></p>
-<table class="caption-top" style="width:100%;">
+<table class="caption-top">
 <colgroup>
 <col style="width: 30%">
-<col style="width: 39%">
+<col style="width: 38%">
 <col style="width: 30%">
 </colgroup>
 <thead>
@@ -445,7 +465,7 @@ Calibration AUC = <strong>0.687</strong>; test AUC = <strong>0.691</strong>.</p>
 <p>Coverage: <strong>90.8% HighBurden</strong>, <strong>91.2% Other</strong>.</p>
 </section>
 <section id="florida-translation-and-next-steps" class="slide level2 smaller">
-<h2>10. Florida Translation and Next Steps</h2>
+<h2>Florida Translation and Next Steps</h2>
 <p><strong>Florida subgroup:</strong> 497 participants<br>
 High Multidomain Burden: <strong>32.2%</strong> vs <strong>28.4%</strong> outside Florida.</p>
 <p>Florida participants had:</p>

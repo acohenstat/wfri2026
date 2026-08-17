@@ -27,10 +27,9 @@ format:
 execute:
   echo: false
   self-contained: true
-
 ---
 
-## 1. Why MetaSense?
+## Why MetaSense?
 
 **Health systems often see chronic disease one condition at a time.**\
 But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer commonly cluster in ways that increase functional decline and care complexity.
@@ -43,7 +42,29 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 
 ------------------------------------------------------------------------
 
-## 2. Project Architecture
+## MeTs and Cancer
+
+![](cancer1.png)
+
+------------------------------------------------------------------------
+
+## MeTs and Cancer
+
+![](cancer2.png)
+
+## MeTs and Cancer
+
+![](cancer3.png)
+
+## OA burden
+
+![](oa1.png)
+
+## OA Burden
+
+![](oa2.png)
+
+## Project Architecture
 
 ![](metasense.png){fig-align="center"}
 
@@ -51,10 +72,10 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 
 ------------------------------------------------------------------------
 
-## 3. Data Sources and Cohorts {.smaller}
+## Data Sources and Cohorts {.smaller}
 
 | Cohort | Sample | Purpose |
-|----------------------|----------------------------:|----------------------|
+|----------------------|---------------------------:|----------------------|
 | All of Us LCA cohort | **218,619** | Discover multimorbidity phenotypes |
 | Wearable prediction cohort | **16,065** | Predict High Multidomain Burden from Fitbit + demographics |
 | Florida subgroup | **497** | Regional benchmark |
@@ -64,7 +85,7 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 
 ------------------------------------------------------------------------
 
-## 4. LCA Indicator Distribution {.smaller}
+## LCA Indicator Distribution {.smaller}
 
 | Indicator            |  Present, n (%) |
 |----------------------|----------------:|
@@ -80,10 +101,10 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 
 ------------------------------------------------------------------------
 
-## 5. Five Multimorbidity Phenotypes {.smaller}
+## Five Multimorbidity Phenotypes {.smaller}
 
 | Phenotype | Prevalence | Defining pattern |
-|----------------------|----------------------------:|----------------------|
+|----------------------|---------------------------:|----------------------|
 | **High Multidomain Burden** | **33.2%** | High MH, obesity, HTN, diabetes, OA, cancer enrichment |
 | Hypertension-Dominant | 21.9% | Nearly universal HTN, lower diabetes/dyslipidemia |
 | Obesity-Dominant | 19.6% | Universal obesity, lower broader cardiometabolic burden |
@@ -94,7 +115,7 @@ But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer comm
 
 ------------------------------------------------------------------------
 
-## 6. Why Focus ML on High Multidomain Burden? {.smaller}
+## Why Focus ML on High Multidomain Burden? {.smaller}
 
 We first tested full five-class prediction from wearables + demographics.
 
@@ -109,7 +130,7 @@ The hardest boundary was **Diabetes-Dominant vs High Multidomain Burden**, consi
 
 ------------------------------------------------------------------------
 
-## 7. Wearable Features Used in ML {.smaller}
+## Wearable Features Used in ML {.smaller}
 
 After reducing highly correlated step features, the final model used:
 
@@ -127,7 +148,7 @@ Plus: age, sex at birth, race/ethnicity, education, marital status, and broad ge
 
 ------------------------------------------------------------------------
 
-## 8. Tuned XGBoost Performance {.smaller}
+## Tuned XGBoost Performance {.smaller}
 
 | Metric      | Held-out Test Result |
 |-------------|---------------------:|
@@ -144,14 +165,14 @@ Calibration AUC = **0.687**; test AUC = **0.691**.
 
 ------------------------------------------------------------------------
 
-## 9. Trust Layer: Calibration + Conformal Prediction {.smaller}
+## Trust Layer: Calibration + Conformal Prediction {.smaller}
 
 **Risk gradient:** observed High Multidomain Burden increased from **5.4%** in the lowest predicted-risk decile to **54.8%** in the highest.
 
 **Class-conditional conformal prediction at 90% nominal coverage:**
 
 | Output | n (%) | Meaning |
-|----------------------|----------------------------:|----------------------|
+|----------------------|---------------------------:|----------------------|
 | `{Other}` | 600 (24.9%) | Lower-burden pattern supported |
 | `{HighBurden}` | 312 (13.0%) | Elevated-burden signal |
 | `{HighBurden, Other}` | 1,498 (62.2%) | Uncertain; more information recommended |
@@ -160,7 +181,7 @@ Coverage: **90.8% HighBurden**, **91.2% Other**.
 
 ------------------------------------------------------------------------
 
-## 10. Florida Translation and Next Steps {.smaller}
+## Florida Translation and Next Steps {.smaller}
 
 **Florida subgroup:** 497 participants\
 High Multidomain Burden: **32.2%** vs **28.4%** outside Florida.
