@@ -289,7 +289,7 @@ ui <- page_navbar(
     div(class = "container-fluid py-4",
       section_header(
         "MetaSense: Trustworthy Wearable Intelligence for Multimorbidity Stratification",
-        "A research prototype that discovers clinically meaningful multimorbidity patterns and uses wearable activity plus demographics to estimate High Multidomain Burden with explicit uncertainty."
+        "A prototype that discovers clinically meaningful multimorbidity patterns and uses wearable activity plus demographics to estimate High Multidomain Burden with explicit uncertainty."
       ),
       layout_columns(
         col_widths = c(8, 4),
@@ -356,7 +356,7 @@ ui <- page_navbar(
     div(class = "container-fluid py-4",
       section_header(
         "Population Overview",
-        "Simple descriptive summaries for leadership. National results describe the full MetaSense cohorts; Florida is an exploratory regional benchmark; Northwest Florida is explicitly flagged when the data are too sparse."
+        "Descriptive summaries. National results describe the full MetaSense cohorts; Florida is an exploratory regional benchmark; Northwest Florida is explicitly flagged when the data are too sparse."
       ),
       card(card_body(cohort_toggle("desc_region_toggle"))),
       uiOutput("desc_summary_boxes"),
@@ -376,7 +376,7 @@ ui <- page_navbar(
             tags$li("LCA profile / High Multidomain Burden indicator"),
             tags$li("activity_days, steps_mean, steps_cv, pct_lt_3000, pct_ge_10000, weekend_difference, wear_density")
           ),
-          p(class = "small text-muted", "Recommended saved object: data/region/region_descriptives.rds with one row per participant. Northwest Florida should be defined using ZIP3 324 or 325. Keep broad 'North Florida' as a separate descriptive region if used; it is not equivalent to Northwest Florida.")
+          p(class = "small text-muted", "")
         )
       )
     )
