@@ -34,7 +34,7 @@ execute:
 **Health systems often see chronic disease one condition at a time.**\
 But mental-health burden, metabolic dysfunction, osteoarthritis, and cancer commonly cluster in ways that increase functional decline and care complexity.
 
-**MetaSense goal:** use large-scale clinical data to discover multimorbidity profiles, then use passive wearable activity patterns to stratify high-burden risk.
+**MetaSense goal:** use large-scale clinical data to discover multimorbidity profiles, then use passive wearable activity patterns to stratify high-burden risk
 
 ::: callout-note
 **Use case:** screening and population-health insight — not diagnosis or automated treatment decisions.
